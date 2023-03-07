@@ -1,11 +1,11 @@
-const fs = require('fs')
-const os = require('os')
-const path = require('path')
+import fs from 'fs'
+import os from 'os'
+import path from 'path'
 
-const sinon = require('sinon')
-const t = require('tap')
+import sinon from 'sinon'
+import t from 'tap'
 
-const dotenv = require('../lib/main')
+import dotenv from '../lib/main.js'
 
 const mockParseResponse = { test: 'foo' }
 let readFileSyncStub

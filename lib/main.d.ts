@@ -24,7 +24,7 @@ export interface DotenvConfigOptions {
    *
    * Specify a custom path if your file containing environment variables is located elsewhere.
    *
-   * example: `require('dotenv').config({ path: '/custom/path/to/.env' })`
+   * example: `dotenv.config({ path: '/custom/path/to/.env' })`
    */
   path?: string;
 
@@ -33,7 +33,7 @@ export interface DotenvConfigOptions {
    *
    * Specify the encoding of your file containing environment variables.
    *
-   * example: `require('dotenv').config({ encoding: 'latin1' })`
+   * example: `dotenv.config({ encoding: 'latin1' })`
    */
   encoding?: string;
 
@@ -42,7 +42,7 @@ export interface DotenvConfigOptions {
    *
    * Turn on logging to help debug why certain keys or values are not being set as you expect.
    *
-   * example: `require('dotenv').config({ debug: process.env.DEBUG })`
+   * example: `dotenv.config({ debug: process.env.DEBUG })`
    */
   debug?: boolean;
 
@@ -51,7 +51,7 @@ export interface DotenvConfigOptions {
    *
    * Override any environment variables that have already been set on your machine with values from your .env file.
    *
-   * example: `require('dotenv').config({ override: true })`
+   * example: `dotenv.config({ override: true })`
    */
   override?: boolean;
 }
@@ -71,3 +71,7 @@ export interface DotenvConfigOutput {
  *
  */
 export function config(options?: DotenvConfigOptions): DotenvConfigOutput;
+
+export type Dotenv = { config: typeof config, parse: typeof parse };
+
+export default Dotenv;

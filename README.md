@@ -85,7 +85,8 @@ SECRET_KEY="YOURSECRETKEYGOESHERE"
 As early as possible in your application, import and configure dotenv:
 
 ```javascript
-require('dotenv').config()
+import dotnev from "dotenv-esm";
+dotenv.config()
 console.log(process.env) // remove this after you've confirmed it is working
 ```
 
@@ -100,8 +101,8 @@ import express from 'express'
 That's it. `process.env` now has the keys and values you defined in your `.env` file:
 
 ```javascript
-require('dotenv').config()
-
+import dotenv from "dotenv";
+dotenv.config();
 ...
 
 s3.getBucketCors({Bucket: process.env.S3_BUCKET}, function(err, data) {})
@@ -142,7 +143,7 @@ Comments begin where a `#` exists, so if your value contains a `#` please wrap i
 The engine which parses the contents of your file containing environment variables is available to use. It accepts a String or Buffer and will return an Object with the parsed keys and values.
 
 ```javascript
-const dotenv = require('dotenv')
+import dotenv from "dotenv";
 const buf = Buffer.from('BASIC=basic')
 const config = dotenv.parse(buf) // will return an object
 console.log(typeof config, config) // object { BASIC : 'basic' }
@@ -234,7 +235,8 @@ Default: `path.resolve(process.cwd(), '.env')`
 Specify a custom path if your file containing environment variables is located elsewhere.
 
 ```js
-require('dotenv').config({ path: '/custom/path/to/.env' })
+import dotenv from "dotenv";
+dotenv.config({ path: '/custom/path/to/.env' })
 ```
 
 ##### Encoding
@@ -244,7 +246,8 @@ Default: `utf8`
 Specify the encoding of your file containing environment variables.
 
 ```js
-require('dotenv').config({ encoding: 'latin1' })
+import dotenv from "dotenv-esm";
+dotenv.config({ encoding: 'latin1' })
 ```
 
 ##### Debug
@@ -254,7 +257,8 @@ Default: `false`
 Turn on logging to help debug why certain keys or values are not being set as you expect.
 
 ```js
-require('dotenv').config({ debug: process.env.DEBUG })
+import dotenv from "dotenv-esm";
+dotenv.config({ debug: process.env.DEBUG })
 ```
 
 ##### Override
@@ -264,7 +268,8 @@ Default: `false`
 Override any environment variables that have already been set on your machine with values from your .env file.
 
 ```js
-require('dotenv').config({ override: true })
+import dotenv from "dotenv-esm";
+dotenv.config({ override: true })
 ```
 
 ### Parse
@@ -274,7 +279,7 @@ variables is available to use. It accepts a String or Buffer and will return
 an Object with the parsed keys and values.
 
 ```js
-const dotenv = require('dotenv')
+import dotenv from "dotenv-esm";
 const buf = Buffer.from('BASIC=basic')
 const config = dotenv.parse(buf) // will return an object
 console.log(typeof config, config) // object { BASIC : 'basic' }
@@ -289,7 +294,7 @@ Default: `false`
 Turn on logging to help debug why certain keys or values are not being set as you expect.
 
 ```js
-const dotenv = require('dotenv')
+import dotenv from "dotenv-esm";
 const buf = Buffer.from('hello world')
 const opt = { debug: true }
 const config = dotenv.parse(buf, opt)
@@ -305,7 +310,8 @@ Most likely your `.env` file is not in the correct place. [See this stack overfl
 Turn on debug mode and try again..
 
 ```js
-require('dotenv').config({ debug: true })
+import dotenv from "dotenv-esm";
+dotenv.config({ debug: true })
 ```
 
 You will receive a helpful error outputted to your console.
@@ -354,7 +360,8 @@ By default, we will never modify any environment variables that have already bee
 If instead, you want to override `process.env` use the `override` option.
 
 ```javascript
-require('dotenv').config({ override: true })
+import dotenv from "dotenv-esm";
+dotenv.config({ override: true })
 ```
 
 ### How come my environment variables are not showing up for React?
@@ -370,8 +377,8 @@ If you are using other frameworks (e.g. Next.js, Gatsby...), you need to consult
 Yes! `dotenv.config()` returns an object representing the parsed `.env` file. This gives you everything you need to continue setting values on `process.env`. For example:
 
 ```js
-const dotenv = require('dotenv')
-const variableExpansion = require('dotenv-expand')
+import dotenv from "dotenv-esm";
+import variableExpansion from "dotenv-expand"
 const myEnv = dotenv.config()
 variableExpansion(myEnv)
 ```

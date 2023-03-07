@@ -1,14 +1,14 @@
 {
-  "name": "dotenv",
+  "name": "dotenv-esm",
   "version": "16.0.3",
-  "description": "Loads environment variables from .env file",
+  "description": "ESM version of the popular dotenv npm package",
   "main": "lib/main.js",
+  "type": "module",
   "types": "lib/main.d.ts",
   "exports": {
     ".": {
-      "require": "./lib/main.js",
-      "types": "./lib/main.d.ts",
-      "default": "./lib/main.js"
+      "import": "./lib/main.js",
+      "types": "./lib/main.d.ts"
     },
     "./config": "./config.js",
     "./config.js": "./config.js",
@@ -29,10 +29,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/motdotla/dotenv.git"
+    "url": "git://github.com/ramiroaisen/dotenv-esm.git"
   },
   "keywords": [
     "dotenv",
+    "esm",
+    "module",
     "env",
     ".env",
     "environment",

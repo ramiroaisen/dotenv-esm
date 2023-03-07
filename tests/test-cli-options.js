@@ -1,6 +1,5 @@
-const t = require('tap')
-
-const options = require('../lib/cli-options')
+import t from 'tap'
+import options from '../lib/cli-options.js'
 
 // matches encoding option
 t.same(options(['node', '-e', "'console.log(testing)'", 'dotenv_config_encoding=utf8']), {

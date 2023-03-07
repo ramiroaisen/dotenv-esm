@@ -1,7 +1,10 @@
-const cp = require('child_process')
-const path = require('path')
+import cp from 'child_process'
+import path from 'path'
 
-const t = require('tap')
+import t from 'tap'
+import { fileURLToPath } from 'url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 function spawn (cmd, options = {}) {
   const { stdout } = cp.spawnSync(

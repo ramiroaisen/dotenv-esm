@@ -1,7 +1,7 @@
-const fs = require('fs')
-const t = require('tap')
+import fs from 'fs'
+import t from 'tap'
 
-const dotenv = require('../lib/main')
+import dotenv from '../lib/main.js'
 
 const parsed = dotenv.parse(fs.readFileSync('tests/.env', { encoding: 'utf8' }))
 

@@ -1,6 +1,6 @@
 {
   "name": "dotenv-esm",
-  "version": "16.0.3",
+  "version": "16.0.3-1",
   "description": "ESM version of the popular dotenv npm package",
   "main": "lib/main.js",
   "type": "module",

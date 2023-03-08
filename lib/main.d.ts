@@ -72,9 +72,11 @@ export interface DotenvConfigOutput {
  */
 export function config(options?: DotenvConfigOptions): DotenvConfigOutput;
 
-declare const Dotenv = { 
-  parse: function<T extends DotenvParseOutput>(src: string | Buffer): DotenvParseOutput {},
-  config: function(options?: DotenvConfigOptions): DotenvConfigOutput {}
+type Dotenv = { 
+  parse: typeof parse,
+  config: typeof config,
 }
+
+declare const Dotenv: Dotenv;
 
 export default Dotenv;

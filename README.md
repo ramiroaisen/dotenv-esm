@@ -85,7 +85,7 @@ SECRET_KEY="YOURSECRETKEYGOESHERE"
 As early as possible in your application, import and configure dotenv:
 
 ```javascript
-import dotnev from "dotenv-esm";
+import dotenv from "dotenv-esm";
 dotenv.config()
 console.log(process.env) // remove this after you've confirmed it is working
 ```
